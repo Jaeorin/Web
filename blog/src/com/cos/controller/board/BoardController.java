@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cos.controller.Action;
+import com.cos.controller.ActionFactory;
+
 //http://localhost:8000/blog/board
 @WebServlet("/board")
 public class BoardController extends HttpServlet {
@@ -22,15 +25,25 @@ public class BoardController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		String cmd = null;
+		request.getParameter("cmd");
+		if (request.getParameter("cmd") != null) {
+			cmd = request.getParameter("cmd");
+		}
 		
+		ActionFactory af = ActionFactory.getInstance();
+		Action action = af.getAction(cmd);
+		if(action != null) action.execute(request, response);
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
-		
+
 	}
 
 }
