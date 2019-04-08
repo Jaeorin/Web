@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>숙소, 트립, 장소를 모두 한 곳에서 - 에어비앤비</title>
+    <link rel="shortcut icon" sizes="76x76" type="image/x-icon"
+        href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript">
+        var bDisplay = true;
+        function footerchange1() {
+            var con1 = document.getElementById("footer1");
+            var con2 = document.getElementById("footer2");
+            var con3 = document.getElementById("footermain");
+            con1.style.display = 'none';
+            con2.style.display = 'block';
+            con3.style.display = 'block';
+        }
+        function footerchange2() {
+            var con1 = document.getElementById("footer1");
+            var con2 = document.getElementById("footer2");
+            var con3 = document.getElementById("footermain");
+            con1.style.display = 'block';
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="jhu__logo">
+                    <a href="#">
+                        <svg class="jhu__logo__icon0" viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false"
+                            style="height:1em;width:1em;display:inline;fill:currentColor">
+                            <path
+                                d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
+                            </path>
+                        </svg>
+                            <svg class="jhu__logo__icon" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"
+                                style="height: 10px; width: 10px; color:white; fill: currentcolor;">
+                                <path
+                                    d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                    </a>
+                </div>
+                <div class="jhu__menu">
+                    <ul class="jhu__menu__list">
+                        <li class="jhu__menu__list__item">
+                            <div class="jhu__menu__list__box">
+                                <a href="#">호스트가 되어보세요</a>
+                            </div>
+                            <div class="jhu__menu__list__underbar"></div>
+                        </li>
+                        <li class="jhu__menu__list__item">
+                            <div class="jhu__menu__list__box">
+                                <a href="#">도움말</a>
+                            </div>
+                            <div class="jhu__menu__list__underbar"></div>
+                        </li>
+                        <li class="jhu__menu__list__item">
+                            <div class="jhu__menu__list__box">
+                                <a href="#">회원가입</a>
+                            </div>
+                            <div class="jhu__menu__list__underbar"></div>
+                        </li>
+                        <li class="jhu__menu__list__item">
+                            <div class="jhu__menu__list__box">
+                                <a href="#">로그인</a>
+                            </div>
+                            <div class="jhu__menu__list__underbar"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="jhu__sec1__name2">특색 있는 숙소와 트립을 예약해보세요</div>
+            </nav>
+            <div class="jhu__sec">
+                <section class="jhu__sec1">
+                    <div class="jhu__sec1__name1">특색 있는 숙소와 트립을 예약해보세요</div>
+                    <form class="jhu__sec1__form" action="#">
+                        <div class="jhu__sec1__form__grid1">
+                            <div class="jhu__sec1__form__subname">목적지</div>
+                            <input class="forminput1" type="text" placeholder="모든 위치" />
+                        </div>
+                        <div class="jhu__sec1__form__grid2">
+                            <div>
+                                <div class="jhu__sec1__form__subname">체크인</div>
+                                <input class="forminput2" type="date" placeholder="년/월/일" />
+                            </div>
+                            <div>
+                                <div class="jhu__sec1__form__subname">체크아웃</div>
+                                <input class="forminput2" type="date" placeholder="년/월/일" />
+                            </div>
+                        </div>
+                        <div class="jhu__sec1__form__grid1">
+                            <div class="jhu__sec1__form__subname">인원</div>
+                            <input class="forminput1" type="text" placeholder="인원" />
+                        </div>
+                        <div class="searchbutton1">
+                            <button class="searchbutton2" type="submit">검색</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </header>
+        <div class="lastname">
+            오리건에 있는<br />
+            300개 이상의 독특한 숙소
+        </div>
+        <main>
+            <section class="jhu__sec2">
+                <div class="jhu__sec__h1">
+                    <h1>에어비엔비 둘러보기</h1>
+                </div>
+                <div class="jhu__sec2__box1">
+                    <div class="jhu__sec2__box1__item">
+                        <div class="jhu__sec2__box1__item__img1"></div>
+                        <div>숙소</div>
+                    </div>
+                    <div class="jhu__sec2__box1__item">
+                        <div class="jhu__sec2__box1__item__img2"></div>
+                        <div>트립</div>
+                    </div>
+                    <div class="jhu__sec2__box1__item">
+                        <div class="jhu__sec2__box1__item__img3"></div>
+                        <div>레스토랑</div>
+                    </div>
+                </div>
+            </section>
+            <section class="jhu__sec3">
+                <div class="jhu__sec__h1">
+                    <h1>에어비엔비 추천</h1>
+                </div>
+                <div class="jhu__sec3__box1">
+                    <div class="jhu__sec3__box1__img1">
+                        <p>파리</p>
+                        <span>\124729/1박 평균</span>
+                    </div>
+                    <div class="jhu__sec3__box1__img2">
+                        <p>도쿄</p>
+                        <span>\107953/1박 평균</span>
+                    </div>
+                    <div class="jhu__sec3__box1__img3">
+                        <p>런던</p>
+                        <span>\136825/1박 평균</span>
+                    </div>
+                    <div class="jhu__sec3__box1__img4">
+                        <p>로스앤젤레스</p>
+                        <span>\148605/1박 평균</span>
+                    </div>
+                    <div class="jhu__sec3__box1__img5">
+                        <div class="grad__test"></div>
+                        <p>바르셀로나</p>
+                        <span>\107559/1박 평균</span>
+                    </div>
+                </div>
+            </section>
+            <section class="jhu__sec4">
+                <div class="jhu__sec__h1">
+                    <h1>최고 평점의 트립</h1>
+                </div>
+                <div style="margin:-20px 0 20px 0;">
+                    현지 호스트가 진행하는 다양하고 재미있는 활동을 예약해보세요
+                </div>
+                <div class="jhu__sec4__box">
+                    <div class="jhu__sec4__box1">
+                        <div class="jhu__sec4__box1__img1"></div>
+                        <p>등산·치앙마이</p>
+                        <p>Sticky Waterfall Chiang Mai</p>
+                        <span></span>
+                        <p>1인당 \57,208</p>
+                        <span>4.96★</span>
+                        <span>(301)</span>
+                    </div>
+                    <div class="jhu__sec4__box2">
+                        <div class="jhu__sec4__box1__img2"></div>
+                        <p>수영·리마</p>
+                        <p>ORIGINAL nada con lobos</p>
+                        <p>marinos</p>
+                        <p>1인당 \54,721</p>
+                        <span>4.91★</span>
+                        <span>(202)</span>
+                    </div>
+                    <div class="jhu__sec4__box3">
+                        <div class="jhu__sec4__box1__img3"></div>
+                        <p>사진 촬영·뉴욕</p>
+                        <p>PHOTOSHOOT WITH VIEW -</p>
+                        <p>NY BEST ROOFTOP</p>
+                        <p>1인당 \104,271</p>
+                        <span>4.92★</span>
+                        <span>(78)</span>
+                    </div>
+                    <div class="jhu__sec4__box4">
+                        <div class="jhu__sec4__box1__img4"></div>
+                        <p>도보 사진 여행·티라섬</p>
+                        <p>Santorini Photo Shoot</p>
+                        <span></span>
+                        <p>1인당 \157,721</p>
+                        <span>4.97★</span>
+                        <span>(64)</span>
+                    </div>
+                    <div class="jhu__sec4__box5">
+                        <div class="jhu__sec4__box1__img5"></div>
+                        <p>야생동식물 관찰·퀘사다</p>
+                        <p>Experiencia con el Oso</p>
+                        <p>Perezoso</p>
+                        <p>1인당 \29,197</p>
+                        <span>4.93★</span>
+                        <span>(471)</span>
+                    </div>
+                    <div class="jhu__sec4__box6">
+                        <div class="jhu__sec4__box1__img6"></div>
+                        <p>등산·푸에르토리코</p>
+                        <p>Hike to a Hidden Waterfall</p>
+                        <span></span>
+                        <p>1인당 \87,869</p>
+                        <span>4.97★</span>
+                        <span>(120)</span>
+                    </div>
+                    <div class="jhu__sec4__box7">
+                        <div class="jhu__sec4__box1__img7"></div>
+                        <p>당일여행·마라케슈</p>
+                        <p>Day trip to the Atlas</p>
+                        <p>Mountains &Camel</p>
+                        <p>1인당 \48,338</p>
+                        <span>4.97★</span>
+                        <span>(310)</span>
+                    </div>
+                    <div class="jhu__sec4__box8">
+                        <div class="jhu__sec4__box1__img8"></div>
+                        <p>패러글라이딩·서울</p>
+                        <p>양평에서의 패러글라이딩</p>
+                        <p>체험비행</p>
+                        <p>1인당 \140,000</p>
+                        <span>4.97★</span>
+                        <span>(234)</span>
+                    </div>
+                </div>
+                <button class="jhu__alltrip">트립 모두보기 ></button>
+            </section>
+        </main>
+        <footer>
+            <div id="footer1">
+                <button class="footer1__button" onclick="footerchange1()"><svg viewBox="0 0 24 24" role="presentation"
+                        aria-hidden="true" focusable="false"
+                        style="height: 15px; width: 15px; display: inline; fill: currentcolor; margin-right: 10px;">
+                        <path
+                            d="m11 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.95-1.07-.14-.21a6.54 6.54 0 0 1 -.29-.5 12.85 12.85 0 0 1 -.66-1.47c-.09-.25-.17-.5-.25-.76h4.57c-.08.26-.16.51-.25.76a12.85 12.85 0 0 1 -.66 1.47 6.54 6.54 0 0 1 -.29.5l-.14.21c-.31.04-.63.07-.95.07s-.64-.03-.95-.07zm-2.03-6.93h5.95a14.71 14.71 0 0 1 -.41 3h-5.13a14.71 14.71 0 0 1 -.41-3zm .47-4h5.01c.27.88.43 1.88.47 3h-5.95c.04-1.12.2-2.12.47-3zm4.8 10.61a13.85 13.85 0 0 0 1.04-2.61h2.4a7.01 7.01 0 0 1 -3.44 2.61zm4.02-3.61h-2.73c.22-.96.35-1.96.38-3h3.02a6.96 6.96 0 0 1 -.68 3zm-2.34-4a12.86 12.86 0 0 0 -.44-3h2.2a6.95 6.95 0 0 1 1.18 3zm .92-4h-1.68c-.08-.22-.16-.45-.26-.65a8.38 8.38 0 0 0 -.49-.9 7 7 0 0 1 2.43 1.55zm-4.04-1.94.3.3c.05.04.14.15.26.32a6.8 6.8 0 0 1 .64 1.1c.03.07.06.15.09.23h-4.28c.03-.07.06-.15.09-.23a6.78 6.78 0 0 1 .64-1.1c.13-.17.22-.28.26-.32l.3-.3a7.04 7.04 0 0 1 .85-.06c.29 0 .57.02.85.06zm-3.31.4c-.16.25-.32.54-.49.9-.1.21-.17.43-.26.65h-1.68a7 7 0 0 1 2.43-1.55zm-3.28 2.55h2.2c-.25.9-.4 1.9-.44 3h-2.94a6.95 6.95 0 0 1 1.18-3zm1.76 4c .03 1.04.17 2.04.38 3h-2.73a6.96 6.96 0 0 1 -.68-3zm-1.02 4h1.66a13.85 13.85 0 0 0 1.04 2.61 7.01 7.01 0 0 1 -3.44-2.61zm6 5.95v3.05h3.5a.5.5 0 1 1 0 1h-7.93a.5.5 0 0 1 0-1h3.43v-3c-2.12 0-4.15-.66-5.89-1.89a.5.5 0 0 1 .58-.82c1.58 1.11 3.4 1.71 5.31 1.71a9 9 0 0 0 9-9c0-3.34-1.83-6.38-4.75-8.07a.5.5 0 0 1 .5-.86c3.22 1.87 5.25 5.23 5.25 8.93 0 5.19-3.95 9.45-9 9.95z"
+                            fill-rule="evenodd"></path>
+                    </svg>약관, 개인정보 보호, 통화 등</button>
+            </div>
+            <div id="footer2">
+                <button class="footer2__button" onclick="footerchange2()"><svg viewBox="0 0 12 12" role="presentation"
+                        aria-hidden="true" focusable="false"
+                        style="height: 15px; width: 15px; display: inline; fill: currentcolor; margin-right: 10px;">
+                        <path
+                            d="m11.5 10.5c.3.3.3.8 0 1.1s-.8.3-1.1 0l-4.4-4.5-4.5 4.5c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l4.5-4.5-4.4-4.5c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l4.4 4.5 4.5-4.5c.3-.3.8-.3 1.1 0s .3.8 0 1.1l-4.5 4.5z"
+                            fill-rule="evenodd"></path>
+                    </svg>닫기</button>
+            </div>
+            <div id="footermain">
+                <div class="footermainsec">
+                    <div class="footermain1">
+                        <div class="footergrid1">
+                            <div class="footergrid1__minwidht">
+                                <div class="footergrid1__name1">에어비엔비</div>
+                                <div>
+                                    <ul class="footergrid1__list">
+                                        <li><a href="#">채용정보</a></li>
+                                        <li><a href="#">미디어</a></li>
+                                        <li><a href="#">정책</a></li>
+                                        <li><a href="#">도움말</a></li>
+                                        <li><a href="#">다양성과 소속감</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footergrid1__minwidht">
+                                <div class="footergrid1__name1">여행하기</div>
+                                <div>
+                                    <ul class="footergrid1__list">
+                                        <li><a href="#">신뢰와 안전</a></li>
+                                        <li><a href="#">여행 크레딧</a></li>
+                                        <li><a href="#">Airbnb Citizen</a></li>
+                                        <li><a href="#">비즈니스 프로그램</a></li>
+                                        <li><a href="#">가이드북</a></li>
+                                        <li><a href="#">Airbnbmag</a></li>
+                                        <li><a href="#">에어비엔비 이벤트</a></li>
+                                        <li><a href="#">한국의 변경된 환불정책</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footergrid1__minwidht">
+                                <div class="footergrid1__name1">호스팅하기</div>
+                                <div>
+                                    <ul class="footergrid1__list">
+                                        <li><a href="#">호스팅의 장점</a></li>
+                                        <li><a href="#">호스팅 기준</a></li>
+                                        <li><a href="#">책임감 있는 호스팅하기</a></li>
+                                        <li><a href="#">커뮤니티 센터</a></li>
+                                        <li><a href="#">트립 호스팅</a></li>
+                                        <li><a href="#">Open Homes 프로그램</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footergrid1__minwidht">
+                                <div class="footergrid1__name2">
+                                    <div><svg viewBox="0 0 32 32" role="img" aria-label="페이스북으로 이동하기" focusable="false"
+                                            style="height: 18px; width: 18px; display: block; fill: rgb(118, 118, 118);">
+                                            <path
+                                                d="m8 14.41v-4.17c0-.42.35-.81.77-.81h2.52v-2.08c0-4.84 2.48-7.31 7.42-7.35 1.65 0 3.22.21 4.69.64.46.14.63.42.6.88l-.56 4.06c-.04.18-.14.35-.32.53-.21.11-.42.18-.63.14-.88-.25-1.78-.35-2.8-.35-1.4 0-1.61.28-1.61 1.73v1.8h4.52c.42 0 .81.42.81.88l-.35 4.17c0 .42-.35.71-.77.71h-4.21v16c0 .42-.35.81-.77.81h-5.21c-.42 0-.8-.39-.8-.81v-16h-2.52a.78.78 0 0 1 -.78-.78"
+                                                fill-rule="evenodd"></path>
+                                        </svg></div>
+                                    <div><svg viewBox="0 0 32 32" role="img" aria-label="트위터로 이동하기" focusable="false"
+                                            style="height: 18px; width: 18px; display: block; fill: rgb(118, 118, 118);">
+                                            <path
+                                                d="m31 6.36c-1.16.49-2.32.82-3.55.95 1.29-.76 2.22-1.87 2.72-3.38a13.05 13.05 0 0 1 -3.91 1.51c-1.23-1.28-2.75-1.94-4.51-1.94-3.41 0-6.17 2.73-6.17 6.12 0 .49.07.95.17 1.38-4.94-.23-9.51-2.6-12.66-6.38-.56.95-.86 1.97-.86 3.09 0 2.07 1.03 3.91 2.75 5.06-1-.03-1.92-.3-2.82-.76v.07c0 2.89 2.12 5.42 4.94 5.98-.63.17-1.16.23-1.62.23-.3 0-.7-.03-1.13-.13a6.07 6.07 0 0 0 5.74 4.24c-2.22 1.74-4.78 2.63-7.66 2.63-.56 0-1.06-.03-1.43-.1 2.85 1.84 6 2.76 9.41 2.76 7.29 0 12.83-4.01 15.51-9.3 1.36-2.66 2.02-5.36 2.02-8.09v-.46c-.03-.17-.03-.3-.03-.33a12.66 12.66 0 0 0 3.09-3.16"
+                                                fill-rule="evenodd"></path>
+                                        </svg></div>
+                                    <div><svg viewBox="0 0 24 24" role="img" aria-label="인스타그램으로 이동하기" focusable="false"
+                                            style="height: 18px; width: 18px; display: block; fill: rgb(118, 118, 118);">
+                                            <path
+                                                d="m23.09.91c-.61-.61-1.33-.91-2.17-.91h-17.84c-.85 0-1.57.3-2.17.91s-.91 1.33-.91 2.17v17.84c0 .85.3 1.57.91 2.17s1.33.91 2.17.91h17.84c.85 0 1.57-.3 2.17-.91s.91-1.33.91-2.17v-17.84c0-.85-.3-1.57-.91-2.17zm-14.48 7.74c.94-.91 2.08-1.37 3.4-1.37 1.33 0 2.47.46 3.41 1.37s1.41 2.01 1.41 3.3-.47 2.39-1.41 3.3-2.08 1.37-3.41 1.37c-1.32 0-2.46-.46-3.4-1.37s-1.41-2.01-1.41-3.3.47-2.39 1.41-3.3zm12.66 11.63c0 .27-.09.5-.28.68a.92.92 0 0 1 -.67.28h-16.7a.93.93 0 0 1 -.68-.28.92.92 0 0 1 -.27-.68v-10.13h2.2a6.74 6.74 0 0 0 -.31 2.05c0 2 .73 3.71 2.19 5.12s3.21 2.12 5.27 2.12a7.5 7.5 0 0 0 3.75-.97 7.29 7.29 0 0 0 2.72-2.63 6.93 6.93 0 0 0 1-3.63c0-.71-.11-1.39-.31-2.05h2.11v10.12zm0-13.95c0 .3-.11.56-.31.77a1.05 1.05 0 0 1 -.77.31h-2.72c-.3 0-.56-.11-.77-.31a1.05 1.05 0 0 1 -.31-.77v-2.58c0-.29.11-.54.31-.76s.47-.32.77-.32h2.72c.3 0 .56.11.77.32s.31.47.31.76z"
+                                                fill-rule="evenodd"></path>
+                                        </svg></div>
+                                    <div><svg viewBox="0 0 1024 1024" role="img" aria-label="네이버 블로그로 이동하기"
+                                            focusable="false"
+                                            style="height: 18px; width: 18px; display: block; fill: rgb(118, 118, 118);">
+                                            <path
+                                                d="m984 1024h-944c-22.1 0-40-17.9-40-40v-944c0-22.1 17.9-40 40-40h944c22.1 0 40 17.9 40 40v944c0 22.1-17.9 40-40 40z"
+                                                fill="#00c73c"></path>
+                                            <path
+                                                d="m757 203.2h-490.4c-70.4 0-127.5 57.1-127.5 127.5v303.5c0 70.7 57.3 127.9 127.9 127.9h173.8l58.7 101.6c5.4 9.3 18.9 9.3 24.2 0l58.7-101.6h174.2c70.6 0 128.5-57.8 128.5-128.5v-302.4c0-70.7-57.3-128-128.1-128z"
+                                                fill="#fff"></path>
+                                            <g fill="#ff812c">
+                                                <path
+                                                    d="m390.7 495.6c0 38.7-28 68.5-62.1 68.5-17.4 0-30.1-6-38.7-15.8v12.2h-38.9v-173.1h38.9v55.5c8.6-9.9 21.3-15.8 38.7-15.8 34 0 62.1 29.8 62.1 68.5zm-36.4 0c0-21.1-14-34.3-33.4-34.3s-33.4 13.2-33.4 34.3 14 34.3 33.4 34.3c19.3 0 33.4-13.2 33.4-34.3z">
+                                                </path>
+                                                <path
+                                                    d="m477.6 495.6c0-38.7 30.6-68.5 68.8-68.5s68.8 29.9 68.8 68.5c0 38.7-30.6 68.5-68.8 68.5s-68.8-29.8-68.8-68.5zm101.1 0c0-19.9-14-33.2-32.3-33.2s-32.3 13.2-32.3 33.2c0 19.9 14 33.2 32.3 33.2 18.2 0 32.3-13.2 32.3-33.2z">
+                                                </path>
+                                                <path
+                                                    d="m704.6 616.1c34.5 0 68.5-18.4 68.5-62.1v-123.3h-37.9v13.2c-8.6-10.6-21-16.9-37.9-16.9-36.9 0-63.9 30.1-63.9 66 0 35.8 27 65.9 63.9 65.9 16.9 0 29.3-6.2 37.9-16.9v12c0 18.4-11.2 27.8-29.3 27.8h-1.3zm-.7-90.5c-19.9 0-34-13.2-34-32.6s14-32.6 34-32.6c19.9 0 34 13.2 34 32.6s-14.1 32.6-34 32.6z">
+                                                </path>
+                                                <path
+                                                    d="m394.3 382.7v35.1c13.4 2.6 21.3 11.8 21.3 27.4v115.3h38.9v-115.3c0-40.3-28.6-59.4-60.2-62.5z">
+                                                </path>
+                                            </g>
+                                        </svg></div>
+                                    <div><svg enable-background="new 0 0 1024 1024" viewBox="0 0 1024 1024" role="img"
+                                            aria-label="네이버 포스트로 이동하기" focusable="false"
+                                            style="height: 18px; width: 18px; display: block; fill: rgb(118, 118, 118);">
+                                            <path
+                                                d="m984 1024h-944c-22.1 0-40-17.9-40-40v-944c0-22.1 17.9-40 40-40h944c22.1 0 40 17.9 40 40v944c0 22.1-17.9 40-40 40z"
+                                                fill="#fff"></path>
+                                            <g fill="#00c73c">
+                                                <path d="m0 198h1024v7h-1024z"></path>
+                                                <path d="m0 405h1024v7h-1024z"></path>
+                                                <path d="m0 612h1024v7h-1024z"></path>
+                                                <path d="m0 819h1024v7h-1024z"></path>
+                                            </g>
+                                            <path d="m307 537 188.2 324.1c7.5 12.9 26.1 12.9 33.6 0l188.2-324.1z"
+                                                fill="#f4e49d"></path>
+                                            <path d="m307 0h410v537h-410z" fill="#00e831"></path>
+                                            <path d="m392 0h240v537h-240z" fill="#00c73c"></path>
+                                            <path
+                                                d="m392 148.5v240h240v-240zm188 182h-47.8l-41.2-62.8v62.8h-47v-124h45.8l42.2 62.4v-62.4h48z"
+                                                fill="#fff"></path>
+                                            <path d="m632 0h85v537h-85z" fill="#00a32a"></path>
+                                            <path
+                                                d="m528.8 861.1 188.2-324.1h-85l-119.5 333.7c6.3-.1 12.6-3.3 16.3-9.6z"
+                                                fill="#e0c141"></path>
+                                            <path d="m448.8 781.2 46.4 79.9c7.5 12.9 26.1 12.9 33.6 0l46.4-79.9z"
+                                                fill="#2d2d2d"></path>
+                                        </svg></div>
+                                </div>
+                                <div>
+                                    <ul class="footergrid1__list">
+                                        <li><a href="#">이용약관</a></li>
+                                        <li><a href="#">개인정보 처리방침</a></li>
+                                        <li><a href="#">여행지 찾기</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="footermain2">
+                        <div class="footermain2__box">
+                            <div class="footermain2__box__padding">
+                                <svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false"
+                                    style="height:20px;width:20px;display:inline; fill:currentColor">
+                                    <path
+                                        d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="footermain2__box__padding"> ⓒ 2019 Airbnb, Inc. All rights reserved.</div>
+                        </div>
+                        <div class="footermain2__box">
+                            <div class="footermain2__box__button">한국어</div>
+                            <div class="footermain2__box__button">KRW - \</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

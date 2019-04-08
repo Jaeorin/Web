@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram</title>
+    <link rel="shortcut icon" href="image/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(250, 250, 250);
+            text-align: center;
+        }
+
+        .body {
+            display: inline-block;
+            width: 1000px;
+        }
+
+        .upperbox1 {
+            background-color: white;
+            border-bottom: 1px solid rgb(220, 220, 220);
+            width: 100%;
+            position: fixed;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .semibox {
+            display: inline-block;
+            width: 1000px;
+        }
+
+        .upperbox2 {
+            padding: 24px 20px;
+            display: grid;
+            grid-template-columns: 3fr 2fr 3fr;
+        }
+
+        .upperbox2 * {
+            display: inline-block;
+        }
+
+        .uppervalue1 {
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .value1image1 {
+            position: relative;
+            top: -2px;
+            left: 2px;
+        }
+
+        .value1image2 {
+            background-color: rgb(80, 80, 80);
+            height: 28px;
+            width: 1px;
+            margin: 0 16px;
+        }
+
+        .value1image3 {
+            position: relative;
+            top: 5px;
+            left: -5px;
+        }
+
+        .uppervalue2 {
+            text-align: center;
+            position: relative;
+        }
+
+        .value2image1 {
+            width: 100%;
+            height: 90%;
+        }
+
+        .value2image2 {
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 3px;
+            background-color: rgb(250, 250, 250);
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .uppervalue3 {
+            text-align: right;
+        }
+
+        .value3image1 * {
+            margin: 0 8px 0 0;
+        }
+
+        .value3image2 {
+            cursor: pointer;
+            background-color: rgb(56, 151, 240);
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 4px;
+            border-style: none;
+            padding: 8px 12px;
+        }
+
+        .value3image3 {
+            cursor: pointer;
+            background-color: white;
+            color: rgb(56, 151, 240);
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 4px;
+            border-style: none;
+            padding: 8px 12px;
+        }
+
+        .value2image2:active .material-icons {
+            display: none;
+        }
+
+        .material-icons {
+            display: inline-block;
+            top: 14px;
+            left: 10px;
+            position: absolute;
+        }
+
+        .bodypadding {
+            padding: 50px 20px;
+        }
+
+        .profile {
+            padding: 80px 80px 0;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .profile * {
+            display: inline-block;
+        }
+
+        .thumbnail {
+            width: 200px;
+            height: 200px;
+            margin: 20px 50px 0 0;
+            position: relative;
+            top: -60px;
+        }
+
+        .button4 {
+            cursor: pointer;
+            background-color: rgb(250, 250, 250);
+            color: black;
+            font-size: 15px;
+            border-style: none;
+        }
+
+        .button4:hover .loginback{
+            display: inline-block;
+        }
+
+        .button4:hover .body{
+            opacity: 0.2;
+        }
+
+        .explorer {
+            width: 150px;
+            height: 150px;
+            border: 1px solid;
+            border-radius: 50%;
+            background-image: url("image/profile.jpg");
+        }
+
+        p {
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .name {
+            margin-right: 15px;
+            font-size: 28px;
+            font-weight: 100;
+        }
+
+        .rower {
+            display: block;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .rower2 {
+            font-size: 20px;
+        }
+
+        .rower3 {
+            font-size: 20px;
+            font-weight: 600;
+            display: block;
+        }
+
+        .rower * {
+            margin-right: 20px;
+            display: inline-block;
+        }
+
+        .linkbox {
+            width: 120px;
+            text-align: center;
+        }
+
+        .links {
+            text-align: left;
+            padding: 0 45px 45px;
+        }
+
+        .links * {
+            display: inline-block;
+        }
+
+        .deco {
+            position: relative;
+        }
+
+        .deco1 {
+            position: absolute;
+            border-top: 1px solid black;
+            top: -24px;
+            left: 60px;
+        }
+
+        .deco2 {
+            color: grey;
+        }
+
+        .link1 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 50%;
+            background-image: url("image/Personal.jpg");
+            background-position: center center;
+        }
+
+        .link2 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 50%;
+            background-image: url("image/Features.jpg");
+            background-position: center center;
+        }
+
+        .link3 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 50%;
+            background-image: url("image/Facebook.jpg");
+            background-position: center center;
+        }
+
+        .link4 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgb(220, 220, 220);
+            border-radius: 50%;
+            background-image: url("image/hwak.jpg");
+            background-position: center center;
+        }
+
+        .lining {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .lining * {
+            padding: 0 30px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .photo * {
+            display: inline-block;
+            width: 1fr;
+            height: 300px;
+            margin: 0 0 15px 0;
+        }
+
+        .photo * * {
+            width: 300px;
+            margin: 0 15px 0 0;
+        }
+
+        .photobox {
+            background-color: black;
+            position: relative;
+        }
+
+        .photobox:hover .photoimage {
+            opacity: 0.4;
+        }
+
+        .photobox:hover .score {
+            display: inline;
+        }
+
+        .score {
+            display: none;
+            position: absolute;
+            padding: 150px 0 0 0;
+        }
+
+        .scorein {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin: 15px;
+            display: inline;
+        }
+
+        footer {
+            margin: 0 45px 0 15px;
+        }
+
+        .footerbox {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 5fr 1fr
+        }
+
+        .footerbox ul {
+            font-size: 13px;
+            font-weight: 550;
+        }
+
+        .footerbox ul li {
+            display: inline;
+            padding: 7px;
+        }
+
+        .footerbox ul li a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .copyright {
+            font-size: 12px;
+            font-weight: 600;
+            color: grey;
+            text-align: right;
+        }
+
+        .topbox {
+            display: inline-block;
+            height: 50px;
+        }
+
+        .top1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+        }
+
+        .top2 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+
+        .text1box {
+            display: inline-block;
+            height: 50px;
+            padding-top: 10px;
+            vertical-align: top;
+        }
+
+        .text1 {
+            color: black;
+            font-size: 20px;
+            font-weight: 1000;
+            display: inline;
+        }
+
+        .text2 {
+            color: black;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .text3 {
+            color: gray;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        section {
+            width: 600px;
+            height: 1000px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        article {
+            display: inline-block;
+        }
+
+        table {
+            text-align: center;
+            background-color: white;
+            width: 430px;
+            height: 600px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin: 10px 0px;
+        }
+
+        input[type=text] {
+            width: 300px;
+            height: 45px;
+            border-radius: 3px;
+            background-color: #FAFAFA;
+            font-size: 15px;
+            border: 1px solid whitesmoke;
+            padding: 0px;
+        }
+
+        input[type=password] {
+            width: 300px;
+            height: 45px;
+            border-radius: 3px;
+            background-color: #FAFAFA;
+            font-size: 15px;
+            border: 1px solid whitesmoke;
+            padding: 0px;
+        }
+
+        input[type=submit] {
+            width: 300px;
+            height: 45px;
+            background-color: #3897f0;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: 0;
+            outline: 0;
+            padding: 0px;
+        }
+
+        .sliceline {
+            display: grid;
+            grid-template-columns: 3fr 2fr 3fr;
+            vertical-align: middle;
+        }
+
+        .sliceline * {
+            font-weight: 600;
+            color: gray;
+        }
+
+        .slice {
+            display: inline-block;
+            background-color: gray;
+            height: 1px;
+            position: relative;
+            top: 4px;
+        }
+
+        .face {
+            width: 20px;
+            height: 20px;
+        }
+
+        .bin {
+            background-color: #FAFAFA;
+            height: 15px;
+            border: 1px solid whitesmoke;
+        }
+
+        .click1 {
+            text-decoration: none;
+            color: #385185;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .click2 {
+            text-decoration: none;
+            color: #385185;
+        }
+
+        .click3 {
+            text-decoration: none;
+            color: #385185;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .loginback {
+            display: none;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .logmain{
+            display: inline-block;
+            width: 500px;
+            padding-top: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loginback">
+        <div class="partdiv">
+            <div class="container">
+                <main class="logmain">
+                    <div>
+                        <a href="https://www.instagram.com/explorer/">
+                            <div class="topbox">
+                                <img class="top1" src="image/top.jpg" />
+                            </div>
+                            <div class="text1box">
+                                <span class="text1">Features (@explorer)</span>
+                            </div>
+                        </a>
+                    </div>
+                    <section>
+                        <a href="https://www.instagram.com/explorer/">
+                            <img class="top2" src="image/top.jpg" />
+                        </a>
+                        <p class="text2">이 스토리를 보려면 로그인하세요</p>
+                        <article>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h1>instagram</h1>
+                                    </td>
+                                </tr>
+                                <form action="https://www.instagram.com/explorer/" method="GET">
+                                    <tr>
+                                        <td><input type="text" name="id" placeholder="   전화번호, 사용자 이름 또는 이메일" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="password" name="pw" placeholder="   비밀번호" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="submit" value="로그인" /></td>
+                                    </tr>
+                                </form>
+                                <tr>
+                                    <td>
+                                        <div class="sliceline">
+                                            <div class="slice"></div>
+                                            <div>또는</div>
+                                            <div class="slice"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a link class="click1" href="#"><img class="face" src="image/facebook.png">
+                                            Facebook으로
+                                            로그인</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a link class="click2" href="#">비밀번호를 잊으셨나요?</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="bin"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text3">계정이 없으신가요?</span> <a link class="click3" href="#">가입하기</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </article>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+    <div class="upperbox1">
+        <div class="semibox">
+            <div class="upperbox2">
+                <a class="uppervalue1" href="#">
+                    <div class="uppervalue1">
+                        <div class="value1image1"><img src="image/icon.png"></div>
+                        <div class="value1image2"></div>
+                        <div class="value1image3"><img src="image/instagram.png"></div>
+                    </div>
+                </a>
+                <div class="uppervalue2">
+                    <i class="material-icons">search</i>
+                    <div class="value2image1">
+                        <input class="value2image2" type="text" placeholder="검색" />
+                    </div>
+                </div>
+                <div class="uppervalue3">
+                    <div class="value3image1">
+                        <button class="value3image2">로그인</button>
+                        <button class="value3image3">가입하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="body">
+        <div class="bodypadding">
+            <div class="profile">
+                <div class="thumbnail">
+                    <div class="explorer"></div>
+                </div>
+                <div class="text">
+                    <div class="rower">
+                        <div class="name">explorer</div>
+                        <div><button class="value3image2">팔로우</button></div>
+                    </div>
+                    <div class="rower">
+                        <div>게시물 <p>1,056</p>
+                        </div>
+                        <div>팔로워 <p>1백만</p>
+                        </div>
+                        <div>팔로우 <p>35</p>
+                        </div>
+
+                    </div>
+                    <div class="rower2">
+                        <div class="rower3">Explorer ↟</div>
+                        Inspiring people to explore the world <br />
+                        Founder ↠ @jeanexplorer 🌌 <br />
+                        Part of the @explorer culture! <br />
+                        contact@explorersmm.com
+                    </div>
+                </div>
+            </div>
+            <div class="links">
+                <div class="linkbox">
+                    <button class="button4">
+                        <div class="link1"></div>
+                        <p>Personal</p>
+                </div>
+                </button>
+                <div class="linkbox">
+                    <button class="button4">
+                        <div class="link2"></div>
+                        <p>Features</p>
+                </div>
+                </button>
+                <div class="linkbox">
+                    <button class="button4">
+                        <div class="link3"></div>
+                        <p>Facebook</p>
+                </div>
+                </button>
+                <div class="linkbox">
+                    <button class="button4">
+                        <div class="link4"></div>
+                        <p>Advertising</p>
+                </div>
+                </button>
+            </div>
+
+            <hr />
+
+            <div class="lining">
+                <div class="deco">
+                    <div class="deco1"></div>
+                    <div>🎞 게시물</div>
+                    <div class="deco2">🖼 태그됨</div>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="photo1">
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/1.jpg">
+                    </div>
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/2.jpg">
+                    </div>
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/3.jpg">
+                    </div>
+                </div>
+                <div class="photo2">
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/4.jpg">
+                    </div>
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/5.jpg">
+                    </div>
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/6.jpg">
+                    </div>
+                </div>
+                <div class="photo3">
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/7.jpg">
+                    </div>
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/8.jpg">
+                    </div>
+                    <div class="photobox">
+                        <div class="score">
+                            <div class="scorein">💖997</div>
+                            <div class="scorein">🔊19</div>
+                        </div>
+                        <img class="photoimage" src="image/1.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footerbox">
+                <ul>
+                    <li><a href="#">INSTAGRAM 정보</a></li>
+                    <li><a href="#">지원</a></li>
+                    <li><a href="#">홍보 센터</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">채용 정보</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">약관</a></li>
+                    <li><a href="#">디렉터리</a></li>
+                    <li><a href="#">프로필</a></li>
+                    <li><a href="#">해시태그</a></li>
+                    <li><a href="#">언어</a></li>
+                </ul>
+                <div class="copyright">ⓒ 2019 INSTAGRAM</div>
+            </div>
+        </footer>
+    </main>
+
+</body>
+
+</html>

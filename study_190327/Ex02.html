@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        header {
+            height: 60px;
+        }
+
+        nav {}
+
+        aside {}
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 8fr 1fr;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        section {
+            display: inline-block;
+            width: 800px;
+            font-size: 30px;
+            font-weight: 700;
+            color: rgb(250, 148, 134);
+            margin: 0 0 30px 0;
+        }
+
+        .subscript {
+            margin: 30px 0 0 0;
+            font-size: 16px;
+            font-weight: 545;
+            color: black;
+        }
+
+        article {
+            display: inline-block;
+            width: 25%;
+            height: 200px;
+            margin: 10px 5px 40px 5px;
+            background-size: 100% 100%;
+            font-size: 22px;
+            font-weight: 400;
+            color: white;
+            padding-top: 14%;
+        }
+
+        .article1 {
+            background-image: url("image/san-francisco.jpg");
+        }
+
+        .article2 {
+            background-image: url("image/new-york.jpg");
+        }
+
+        .article3 {
+            background-image: url("image/london.jpg");
+        }
+
+        .article4 {
+            background-image: url("image/napa.jpg");
+        }
+
+        .article5 {
+            background-image: url("image/sonoma.jpg");
+        }
+
+        .article6 {
+            background-image: url("image/san-francisco-2.jpg");
+        }
+
+        button {
+            background-color: #FF5A5F;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 6px;
+            border: 0;
+            display: inline-block;
+            padding: 13px 20px;
+            cursor: pointer;
+        }
+
+        footer {
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div class="container">
+        <nav></nav>
+        <main>
+            <section class="section1">
+                Meet Guidebooks
+                <div>
+                    <div class="subscript">Discover hundreds of local spots recommended by Aitbnb hosts</div>
+                    <article class="article1">San Francisco</article>
+                    <article class="article2">New York</article>
+                    <article class="article3">London</article>
+
+                    <button>See All Guidebooks</button>
+            </section>
+            <section class="section2">
+                Just for the weekend
+                <div>
+                    <div class="subscript">Discover new, inspiring places close to home.</div>
+                    <article class="article4">Napa</article>
+                    <article class="article5">Sonoma</article>
+                    <article class="article6">San Francisco</article>
+                </div>
+                <div>
+                    <button>See All Destinations</button>
+                </div>
+            </section>
+        </main>
+        <aside></aside>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+header {
+    display: block;
+    background-image: url("../media/background.jpg");
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 680px;
+    background-size: cover;
+}
+
+nav {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+.jhu__logo{
+}
+
+.jhu__logo a {
+    font-size: 36px;
+    color: white;
+}
+
+.jhu__logo__icon {
+    display: none;
+    transform: rotate(0deg);
+    position: relative;
+    bottom: 15px;
+    right: 5px;
+}
+
+.jhu__menu__list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.jhu__menu__list a {
+    color: white;
+}
+
+.jhu__menu__list__box {
+    padding: 0 15px;
+}
+
+.jhu__menu__list__item {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.jhu__menu__list__underbar {
+    display: none;
+    position: relative;
+    width: 85%;
+    height: 0px;
+    border: 1px solid white;
+    top: 20px;
+}
+
+.jhu__menu__list__item:hover .jhu__menu__list__underbar {
+    display: inline-block;
+}
+
+.jhu__sec {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.jhu__sec1 {
+    height: 480px;
+    width: 441px;
+    background-color: white;
+    border-radius: 4px;
+    position: relative;
+    top: 50px;
+}
+
+.jhu__sec1__name1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(72, 72, 72);
+    padding: 30px 40px 0 40px;
+}
+
+.jhu__sec1__name2 {
+    display: none;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+.jhu__sec1__form {
+    margin: 20px 40px 0 40px;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.jhu__sec1__form__grid1 {
+    display: grid;
+    grid-template-columns: auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(72, 72, 72);
+}
+
+.jhu__sec1__form__grid2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(72, 72, 72);
+    padding: 0;
+    margin: 0;
+}
+
+.jhu__sec1__form__subname {
+    padding-bottom: 10px;
+}
+
+.forminput1 {
+    height: 45px;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 3px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.forminput2 {
+    height: 45px;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 3px;
+    width: 94%;
+    font-size: 16px;
+    color: rgb(72, 72, 72);
+    padding-left: 10px;
+}
+
+.searchbutton1 {
+    text-align: end;
+}
+
+.searchbutton2 {
+    cursor: pointer;
+    background-color: rgb(255, 90, 95);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    border-style: none;
+    padding: 12px 24px;
+}
+
+.lastname {
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    padding: 25px;
+    text-align: right;
+    bottom: 80px;
+}
+
+.test {
+    display: block;
+}
+
+@media(max-width:1120px) {
+    .jhu__menu {
+        display: none;
+    }
+    .jhu__logo__icon {
+        display: inline-block;
+    }
+}
+
+@media(max-width:740px) {
+    .jhu__logo__icon0 {
+        color: #FF5A5F;
+    }
+    header {
+        background-image: none;
+    }
+    nav {
+        background-image: url("../media/background.jpg");
+        min-height: 180px;
+        background-size: cover;
+        background-position: center center;
+        grid-template-columns: auto;
+    }
+    .jhu__sec1__name1 {
+        display: none;
+    }
+    .jhu__sec1__name2 {
+        display: block;
+    }
+}

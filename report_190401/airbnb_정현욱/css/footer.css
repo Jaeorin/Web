@@ -1,0 +1,115 @@
+#footer1 {
+    display: inline-block;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 2;
+}
+
+#footer2 {
+    display: none;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 2;
+}
+
+.footer1__button {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(72, 72, 72);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 3px;
+    border-style: none;
+    padding: 8px 12px;
+    box-shadow: 0 0 5px -3px rgb(120, 120, 120);
+}
+
+.footer2__button {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(72, 72, 72);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 3px;
+    border-style: none;
+    padding: 8px 12px;
+    box-shadow: 0 0 5px -3px rgb(120, 120, 120);
+}
+
+#footermain{
+    display: none;
+    z-index: 1;
+    background-color: white;
+    border-top: 1px solid rgb(230, 230, 230);
+    bottom: 0px;
+    width: 100%;
+    height: 380px;
+    position: fixed;
+}
+
+.footermainsec{
+    margin: 50px auto 0;
+    max-width: 1024px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footermain1{
+    margin-bottom: 20px;
+}
+
+.footergrid1{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 50px;
+}
+
+.footergrid1__minwidht{
+    min-width: 160px;
+    max-width: 220px;
+}
+
+.footergrid1__name1{
+    margin-bottom: 15px;
+}
+
+.footergrid1__name2{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.footergrid1__list li{
+    margin-bottom: 3px;
+}
+
+.footergrid1__list a{
+    color: rgb(120, 120, 120);
+}
+
+.footermain2{
+    margin-top: 15px;
+    display:grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    color: rgb(120, 120, 120);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footermain2__box{
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.footermain2__box__button{
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.footermain2__box__padding{
+    padding-top: 10px;
+}

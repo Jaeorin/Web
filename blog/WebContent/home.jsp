@@ -1,6 +1,7 @@
 <%@page import="com.cos.domain.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +9,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-	home 입니다.
-	${list.get(0).userID}
-	${list.get(1).userID}
-	${list.get(2).userID}
-	${list.get(3).userID}
-	${list.get(4).userID}
-	${list.get(5).userID}
-	${list.get(6).userID}
-	${list.get(7).userID}
-	${list.get(8).userID}
-	${list.get(9).userID}
+	<table border="1">
+		<tr>
+			<td>번호</td>
+			<td>제목</td>
+			<td>내용</td>
+			<td>아이디</td>
+			<td>조회수</td>
+		</tr>
+		<c:forEach var="item" items="${list}">
+			<tr>
+				<td>${item.num}</td>
+				<td>${item.title}</td>
+				<td>${item.content}</td>
+				<td>${item.userID}</td>
+				<td>${item.readCount}</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>

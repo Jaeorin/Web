@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+
+<body>
+    <h2>회원가입</h2>
+    <hr />
+    <form action="index.html" method="GET">
+        <table>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    이름
+                </td>
+                <td>
+                    <input type="text" name="name" maxlength="30" required />
+                    <input type="button" value="중복확인">
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    아이디
+                </td>
+                <td>
+                    <input type="text" name="id" maxlength="12" required />
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    비밀번호
+                </td>
+                <td>
+                    <input type="password" name="pw1" maxlength="12" required />
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    비밀번호 확인
+                </td>
+                <td>
+                    <input type="password" name="pw2" maxlength="12" required />
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    생일/성별
+                </td>
+                <td>
+                    <input type="date" name="date" required />
+                    <input type="radio" name="gender" value="male" required /> 남
+                    <input type="radio" name="gender" value="female" required /> 여
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    우편번호
+                </td>
+                <td>
+                    <input type="text" name="postnum1" size="5" maxlength="3" required />
+                    -
+                    <input type="text" name="postnum2" size="5" maxlength="3" required />
+                    <input type="button" value="우편번호검색">
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    집주소
+                </td>
+                <td>
+                    <input type="text" name="address1" size="30" maxlength="120" required />
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    상세주소
+                </td>
+                <td>
+                    <input type="text" name="address2" size="30" maxlength="120" required />
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    연락처
+                </td>
+                <td>
+                    <select name="homenum1" required>
+                        <option value="" selected disabled hidden>선택</option>
+                        <option value="02">02</option>
+                        <option value="055">055</option>
+                        <option value="051">051</option>
+                    </select>
+                    -
+                    <input type="text" name="homenum2" size="4" maxlength="4" required />
+                    -
+                    <input type="text" name="homenum3" size="4" maxlength="4" required />
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+                    *
+                </td>
+                <td>
+                    이메일
+                </td>
+                <td>
+                    <input type="text" name="email1" size="4" maxlength="30" required />
+                    @
+                    <select name="email2" required>
+                        <option value="" selected disabled hidden>선택</option>
+                        <option value="naver">naver.com</option>
+                        <option value="google">google.com</option>
+                        <option value="daum">daum.com</option>
+                    </select>
+                    <input type="button" value="중복확인">
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+
+                </td>
+                <td>
+                    회사전화
+                </td>
+                <td>
+                    <select name="conpanynum1">
+                        <option value="" selected disabled hidden>선택</option>
+                        <option value="02">02</option>
+                        <option value="055">055</option>
+                        <option value="051">051</option>
+                    </select>
+                    -
+                    <input type="text" name="conpanynum2" size="4" maxlength="4" />
+                    -
+                    <input type="text" name="conpanynum3" size="4" maxlength="4" />
+                </td>
+            </tr>
+            <tr rowspan="3">
+                <td width="10">
+
+                </td>
+                <td>
+                    회사주소
+                </td>
+                <td>
+                    <input type="text" name="conpanypostnum1" size="5" maxlength="3" />
+                    -
+                    <input type="text" name="conpanypostnum2" size="5" maxlength="3" />
+                    <input type="button" value="우편번호검색">
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+
+                </td>
+                <td>
+                </td>
+                <td>
+                    <input type="text" name="conpanyaddress" size="30" maxlength="120" />
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+
+                </td>
+                <td>
+                    휴대폰
+                </td>
+                <td>
+                    <select name="phonenum1">
+                        <option value="" selected disabled hidden>선택</option>
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="012">012</option>
+                    </select>
+                    -
+                    <input type="text" name="phonenum2" size="4" maxlength="4" />
+                    -
+                    <input type="text" name="phonenum3" size="4" maxlength="4" />
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+
+                </td>
+                <td>
+                    뉴스메일
+                </td>
+                <td>
+                    <input type="radio" name="news" value="on" /> 받습니다.
+                    <input type="radio" name="news" value="off" /> 받지 않습니다.
+                </td>
+            </tr>
+            <tr>
+                <td width="10">
+
+                </td>
+                <td>
+                    SMS안내(이벤트)
+                </td>
+                <td>
+                    <input type="radio" name="sms" value="on" /> 받습니다.
+                    <input type="radio" name="sms" value="off" /> 받지 않습니다.
+                </td>
+            </tr>
+        </table>
+        <br />
+        <input type="submit" />
+    </form>
+</body>
+
+</html>

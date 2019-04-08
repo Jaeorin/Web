@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>실습2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            list-style-type: none;
+        }
+
+        header {
+            margin-top: 60px;
+        }
+
+        nav {}
+
+        main {
+            text-align: center;
+        }
+
+        section {
+            text-align: justify;
+            display: grid;
+            width: 600px;
+        }
+
+        article {
+            margin: 5px;
+            padding: 5px;
+            background-color: brown;
+            background-size: 100% 100%;
+        }
+
+        aside {}
+
+        footer {}
+
+        li {
+            padding: 4px 0;
+            text-align: left;
+            font-size: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .center {
+            display: inline-block;
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 20fr 2fr;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: 1fr 3fr 6fr 3fr;
+            margin-bottom: 80px;
+        }
+
+        .image {
+            text-align: left;
+            display: inline-block;
+            background-image: url("image/룰루.jpg");
+            background-size: 100% 100%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .category {
+            display: inline-block;
+
+        }
+
+        .list {
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        .list2 {
+            text-decoration: underline;
+            font-size: 14px;
+            color: grey;
+        }
+
+        .section1 {
+            height: 300px;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .section2 {
+            height: 300px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .section3 {
+            height: 350px;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .section4 {
+            height: 350px;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .section5 {
+            height: 350px;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .ararticle1 {
+            background-color: rgb(213, 236, 244);
+        }
+
+        .ararticle2 {
+            background-image: url("image/1.jpg");
+        }
+
+        .ararticle3 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            background-color: rgb(229, 239, 217);
+        }
+
+        .ararticle4 {
+            grid-row-start: 1; 
+            grid-row-end: 3;
+            background-image: url("image/2.jpg");
+        }
+
+        .ararticle5 {
+            background-color: rgb(252, 248, 192);
+        }
+
+        .ararticle6 {
+            background-color: rgb(235, 235, 235);
+        }
+
+        .ararticle7 {
+            background-image: url("image/3.jpg");
+        }
+
+        .ararticle8 {
+            background-color: rgb(244, 197, 195);
+        }
+
+        .ararticle9 {
+            background-image: url("image/4.jpg");
+        }
+
+        .ararticle10 {
+            grid-row-start: 1; 
+            grid-row-end: 3;
+            background-image: url("image/5.jpg");
+        }
+
+        .ararticle11 {
+            background-image: url("image/6.jpg");
+        }
+
+        .ararticle12 {
+            background-image: url("image/7.jpg");
+        }
+
+        .ararticle13 {
+            grid-row-start: 1; 
+            grid-row-end: 3;
+            background-color: rgb(229, 239, 217);
+        }
+
+        .ararticle14 {
+            background-image: url("image/8.jpg");
+        }
+
+        .ararticle15 {
+            background-color: rgb(252, 248, 192);
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div class="container">
+        <nav></nav>
+        <main>
+            <div class="center">
+                <section class="menu">
+                    <div class="image"></div>
+                    <div></div>
+                    <div class="category">
+                        <div class="list">
+                            <div class="list2">INFORMATION</div>
+                            <ul class="underlist">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">ANewsbout</a></li>
+                                <li><a href="#">AbPressout</a></li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="list2">PORTFOLIO</div>
+                            <ul class="underlist">
+                                <li><a href="#">Products</a></li>
+                                <li><a href="#">Graphics</a></li>
+                                <li><a href="#">Sounds</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="list">
+                            <div class="list2">NETWORK</div>
+                            <ul class="underlist">
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section1">
+                    <article class="ararticle1"></article>
+                    <article class="ararticle2"></article>
+                </section>
+
+                <section class="section2">
+                    <article class="ararticle3"></article>
+                    <article class="ararticle4"></article>
+                    <article class="ararticle5"></article>
+                    <article class="ararticle6"></article>
+                    <article class="ararticle7"></article>
+                </section>
+
+                <section class="section3">
+                    <article class="ararticle8"></article>
+                    <article class="ararticle9"></article>
+                </section>
+
+                <section class="section4">
+                    <article class="ararticle10"></article>
+                    <article class="ararticle11"></article>
+                    <article class="ararticle12"></article>
+                </section>
+
+                <section class="section5">
+                    <article class="ararticle13"></article>
+                    <article class="ararticle14"></article>
+                    <article class="ararticle15"></article>
+                </section>
+
+            </div>
+        </main>
+        <aside></aside>
+    </div>
+    <footer></footer>
+</body>
+
+</html>
