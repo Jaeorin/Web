@@ -19,7 +19,7 @@ public class MyUtils {
 		
 		StringBuilder urlBuilder = new StringBuilder("http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/ForecastGrib"); /* URL */
 		urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=" + URLEncoder.encode("ZA1cO2IVjORQ6YQv0m4+BhJ+xsVVJLvi2BE0MHkgCvPpvRA7FR/9F8nlEiI0mqYoulPccxV6XFcCZ1t7ybZCZA==", "UTF-8")); /* 서비스 인증 */
-		urlBuilder.append("&" + URLEncoder.encode("base_date", "UTF-8") + "=" + URLEncoder.encode("20190412", "UTF-8")); /* ‘15년 12월 1일 발표 */
+		urlBuilder.append("&" + URLEncoder.encode("base_date", "UTF-8") + "=" + URLEncoder.encode("20190416", "UTF-8")); /* ‘15년 12월 1일 발표 */
 		urlBuilder.append("&" + URLEncoder.encode("base_time", "UTF-8") + "=" + URLEncoder.encode("1200", "UTF-8")); /* 06시 발표(정시단위) -매시각 40분 이후 호출 */
 		urlBuilder.append("&" + URLEncoder.encode("nx", "UTF-8") + "=" + URLEncoder.encode(nx + "", "UTF-8")); /* 예보지점의 X 좌표값 */
 		urlBuilder.append("&" + URLEncoder.encode("ny", "UTF-8") + "=" + URLEncoder.encode(ny + "", "UTF-8")); /* 예보지점의 Y 좌표값 */
@@ -54,7 +54,13 @@ public class MyUtils {
 		try {
 			json = (JSONObject) parser.parse(sb.toString());
 			JSONObject response = (JSONObject) json.get("response");
+			
+			System.out.println(response);
+			
 			JSONObject body = (JSONObject) response.get("body");
+			
+			System.out.println(body);
+			
 			JSONObject items = (JSONObject) body.get("items");
 			JSONArray itemArray = (JSONArray) items.get("item");
 			JSONObject item = (JSONObject) itemArray.get(3);

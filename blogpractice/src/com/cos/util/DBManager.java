@@ -23,13 +23,11 @@ public class DBManager {
 			DataSource ds = (DataSource) envContext.lookup("jdbc/myoracle");
 			Connection conn = ds.getConnection();
 
-			System.out.println("DB Connection complete");
 			return conn;
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("DB Connection failure");
 		return null;
 	}
 

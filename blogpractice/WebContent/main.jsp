@@ -11,6 +11,8 @@
 <title>정현욱의 블로그</title>
 </head>
 <body>
+	<a href="member?cmd=memberLogin">로그인</a>
+	<a href="member?cmd=memberJoin">회원가입</a>
 	<table border="1">
 		<tr>
 			<td>번호</td>

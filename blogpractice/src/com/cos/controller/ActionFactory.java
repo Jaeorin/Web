@@ -1,6 +1,7 @@
 package com.cos.controller;
 
 import com.cos.controller.board.*;
+import com.cos.controller.member.*;
 
 public class ActionFactory {
 
@@ -30,6 +31,12 @@ public class ActionFactory {
 			return new BoardUpdateProcAction();
 		}else if (cmd.contentEquals("boardDelete")) {
 			return new BoardDeleteAction();
+		}else if (cmd.contentEquals("memberJoin")) {
+			return new MemberJoinAction();
+		}else if (cmd.contentEquals("memberJoinProc")) {
+			return new MemberJoinProcAction();
+		}else if (cmd.contentEquals("memberLogin")) {
+			return new MemberLoginAction();
 		}
 		
 		return null;
