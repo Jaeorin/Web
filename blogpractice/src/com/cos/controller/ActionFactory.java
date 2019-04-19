@@ -37,6 +37,8 @@ public class ActionFactory {
 			return new MemberJoinProcAction();
 		}else if (cmd.contentEquals("memberLogin")) {
 			return new MemberLoginAction();
+		}else if (cmd.contentEquals("memberLoginProc")) {
+			return new MemberLoginAction();
 		}
 		
 		return null;

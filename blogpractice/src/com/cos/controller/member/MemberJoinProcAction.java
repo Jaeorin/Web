@@ -34,6 +34,7 @@ public class MemberJoinProcAction implements Action {
 		member.setUserEmail(userEmail);
 		member.setUserPhone(userPhone);
 		member.setUserGender(userGender);
+		member.setUserState(1);
 		member.setCreateDate(LocalDate.now());
 		member.setUpdateDate(LocalDate.now());
 		
