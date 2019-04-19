@@ -4,10 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Insert title here</title>
 </head>
 <body>
+	session : ${sessionScope.userId}<br />
+	request : ${requestScope.board.num}<br />
+	page : ${pageScope.data}<br />
+	application : ${applicationScope.test}<br />
 	<form action="board?cmd=boardUpdateProc" method="POST">
 		<table border="1">
 			<tr>

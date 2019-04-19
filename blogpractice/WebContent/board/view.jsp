@@ -4,10 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+		pageContext.setAttribute("data", "안녕");
+	%>
+	session : ${sessionScope.userId}<br />
+	request : ${requestScope.board.num}<br />
+	page : ${pageScope.data}<br />
+	application : ${applicationScope.test}<br />
 	<table border="1">
 		<tr>
 			<td>번호</td>

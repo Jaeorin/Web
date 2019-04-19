@@ -7,12 +7,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>정현욱의 블로그</title>
 </head>
 <body>
-	<a href="member?cmd=memberLogin">로그인</a>
-	<a href="member?cmd=memberJoin">회원가입</a>
+	<c:choose>
+		<c:when test="${empty sessionScope.userId}">
+			<a href="member?cmd=memberLogin">로그인</a>
+			<a href="member?cmd=memberJoin">회원가입</a>
+		</c:when>
+		<c:otherwise>
+			<%=session.getAttribute("userId")%>
+			<a href="member?cmd=memberLogout">로그아웃</a>
+		</c:otherwise>
+	</c:choose>
 	<table border="1">
 		<tr>
 			<td>번호</td>

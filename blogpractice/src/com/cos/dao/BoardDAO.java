@@ -116,9 +116,6 @@ public class BoardDAO {
 
 			int result = pstmt.executeUpdate();
 
-			LOG.info(result);
-			;
-
 			return result;
 
 		} catch (Exception e) {
@@ -187,10 +184,6 @@ public class BoardDAO {
 			pstmt.setString(1, bDto.getTitle());
 			pstmt.setString(2, bDto.getContent());
 			pstmt.setInt(3, bDto.getNum());
-			
-			LOG.info(bDto.getTitle());
-			LOG.info(bDto.getContent());
-			LOG.info(bDto.getNum());
 
 			int result = pstmt.executeUpdate();
 
