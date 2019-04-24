@@ -5,9 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+<%@ include file="/base/link.jsp" %>
 </head>
 <body>
+	<%@ include file="/base/header.jsp" %>
 	session : ${sessionScope.userId}<br />
 	request : ${requestScope.board.num}<br />
 	page : ${pageScope.data}<br />
@@ -36,5 +39,6 @@
 		<input type="submit" value="완료" /><br />
 	</form>
 	<a href="board?cmd=boardList">목록</a>
+	<%@ include file="/base/script.jsp" %>
 </body>
 </html>

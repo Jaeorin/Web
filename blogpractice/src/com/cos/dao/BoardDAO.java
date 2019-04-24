@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.cos.domain.Board;
 import com.cos.dto.BoardUpdateDTO;
+import com.cos.util.Code;
 import com.cos.util.DBManager;
 import com.cos.util.MyUtils;
 
@@ -53,6 +54,59 @@ public class BoardDAO {
 
 				list.add(board);
 			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+
+			DBManager.close(conn, pstmt, rs);
+		}
+
+		return list;
+
+	}
+
+	public List<Board> findall(int start, int end) {
+
+		final String SQL = "select\r\n"
+				+ "(select count(*) from board), num, title, content, userid, readcount, createdate, updatedate, mynum\r\n"
+				+ "from(\r\n" + "select\r\n"
+				+ "num, title, content, userid, readcount, createdate, updatedate, rownum as mynum\r\n" + "from\r\n"
+				+ "board\r\n" + "order by\r\n" + "num DESC)\r\n" + "where\r\n" + "mynum > ? and mynum <= ?";
+		Connection conn = DBManager.getConnection();
+		List<Board> list = new ArrayList<Board>();
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			rs = pstmt.executeQuery();
+
+			// rs는 결과값을 가지고 있는 객체가 아니다.
+			// rs는 커서를 가지고 있다.(결과값의 첫번째 직전에 있음)
+			// rs.next()는 커서를 한칸씩 옮기면서 DB에 있는 데이터를 가지고 오는 함수이다.
+			// rs.isFirst(), rs.isLast()커서를 옮기는 함수가 아님.
+			// 커서가 현재 first에 있으면 true, 커서가 현재 last에 있으면 true
+			while (rs.next()) {
+
+				if (rs.isFirst()) {
+					Code.setMaxListNum(rs.getInt(1));
+				}
+
+				Board board = new Board();
+				board.setNum(rs.getInt("num"));
+				board.setTitle(rs.getString("title"));
+				board.setContent(rs.getString("content"));
+				board.setUserID(rs.getString("userID"));
+				board.setReadCount(rs.getInt("readCount"));
+				board.setCreateDate(MyUtils.StringToLocalDate(rs.getString("createDate")));
+				board.setUpdateDate(MyUtils.StringToLocalDate(rs.getString("updateDate")));
+
+				list.add(board);
+
+			}
+
+			return list;
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -2,6 +2,7 @@ package com.cos.domain;
 
 import java.time.LocalDate;
 
+
 public class Board {
 
 	private int num;
@@ -71,8 +72,5 @@ public class Board {
 	public void setUpdateDate(LocalDate updateDate) {
 		this.updateDate = updateDate;
 	}
-
-
-	
 
 }

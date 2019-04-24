@@ -5,9 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+<%@ include file="/base/link.jsp" %>
 </head>
 <body>
+	<%@ include file="/base/header.jsp" %>
 	<%
 		pageContext.setAttribute("data", "안녕");
 	%>
@@ -40,5 +43,6 @@
 	<a href="board?cmd=boardDelete&num=${board.num}">삭제</a>
 	<a href="board?cmd=boardUpdate&num=${board.num}">수정</a>
 	<a href="board?cmd=boardList">목록</a>
+	<%@ include file="/base/script.jsp" %>
 </body>
 </html>

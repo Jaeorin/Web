@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+<%@ include file="/base/link.jsp" %>
 </head>
 <body>
+	<%@ include file="/base/header.jsp" %>
 	<form action="board?cmd=memberJoinProc" method="POST" onsubmit="return validateJoin()">
 		<input id="userID" type="text" name="userId" placeholder="아이디" required />아이디
 		<input type="button" value="중복확인" onclick="validateDuplicateID()"><br />
@@ -59,7 +62,7 @@
 		}
 
 	}
-	
 </script>
+<%@ include file="/base/script.jsp" %>
 </body>
 </html>

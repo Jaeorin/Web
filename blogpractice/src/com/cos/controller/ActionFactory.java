@@ -16,9 +16,9 @@ public class ActionFactory {
 	
 	public Action getAction(String cmd) {
 		if(cmd == null) {
-			return new BoardListAction();
-		}else if (cmd.contentEquals("boardList")) {
-			return new BoardListAction();
+			return new BoardListPagingAction();
+		}else if (cmd.contentEquals("boardListPage")) {
+			return new BoardListPagingAction();
 		}else if (cmd.contentEquals("boardView")) {
 			return new BoardViewtAction();
 		}else if (cmd.contentEquals("boardWrite")) {

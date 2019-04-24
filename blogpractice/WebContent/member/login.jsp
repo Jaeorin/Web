@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+<%@ include file="/base/link.jsp" %>
 </head>
 <body>
+	<%@ include file="/base/header.jsp" %>
 	<%
 		application.setAttribute("test", "어플리케이션");
 	%>
@@ -18,5 +21,6 @@
 		<input type="submit" value="로그인" /><br />
 	</form>
 	<a href="board?cmd=boardList">목록</a>
+	<%@ include file="/base/script.jsp" %>
 </body>
 </html>
