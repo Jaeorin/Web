@@ -11,8 +11,8 @@
 <body>
 	<%@ include file="/base/header.jsp" %>
 	<form action="board?cmd=memberJoinProc" method="POST" onsubmit="return validateJoin()">
-		<input id="userID" type="text" name="userId" placeholder="아이디" required />아이디
-		<input type="button" value="중복확인" onclick="validateDuplicateID()"><br />
+		<input id="userId" type="text" name="userId" placeholder="아이디" required />아이디
+		<input type="button" value="중복확인" onclick="validateDuplicateId()"><br />
 		<input id="pw1" type="password" name="userPassword" placeholder="비밀번호" required />비밀번호<br />
 		<input id="pw2" type="password" placeholder="비밀번호 확인" required />비밀번호 확인<br />
 		<input type="email" name="userEmail" placeholder="이메일" required />이메일<br />
@@ -24,7 +24,15 @@
 
 	<a href="board?cmd=boardList">목록</a>
 <script>
+	
+	let check = 1;
+
 	function validateJoin(){
+		
+		if(check==1){
+			return false;
+		}
+				
 		var pw1 = document.querySelector("#pw1");
 		var pw2 = document.querySelector("#pw2");
 		
@@ -41,11 +49,30 @@
             return false;
 		}
 	}
+	
+	function loadAjax(userId) {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				alert(this.responseText);
+				if(this.responseText == "OK"){
+					alert("중복된 아이디가 없습니다");
+					check = 0;
+				} else {
+					alert("중복된 아이디가 있습니다");
+				} 
+			}
+		};
+		xhttp.open("GET", "rest?userId="+userId, true);
+		xhttp.send();
+	}
 		
-	function validateDuplicateID(){
-		var userID_element = document.querySelector("#userID");
-		var userID = userID_element.value;
-		alert(userID);
+	function validateDuplicateId(){
+		var userId_element = document.querySelector("#userId");
+		var userId = userId_element.value;
+		
+		loadAjax(userId);
+
 	}
 	
 	function validateJoin2(){

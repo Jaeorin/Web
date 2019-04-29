@@ -80,5 +80,31 @@ public class MemberDAO {
 		return -1;
 
 	}
+	
+	public int findByUserId(String userId) {
+
+		final String SQL = "SELECT count(*) FROM member WHERE userId = ?";
+		Connection conn = DBManager.getConnection();
+
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userId);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				int result = rs.getInt(1);
+				return result; // count(*) 1이면 인증, 0이면 미인증
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+
+		return -1;
+
+	}
 
 }

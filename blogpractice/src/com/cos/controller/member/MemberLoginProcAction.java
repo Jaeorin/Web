@@ -16,6 +16,7 @@ import com.cos.controller.Action;
 import com.cos.dao.MemberDAO;
 import com.cos.util.DBManager;
 import com.cos.util.MyUtils;
+import com.cos.util.SHA256;
 
 public class MemberLoginProcAction implements Action {
 
@@ -27,7 +28,8 @@ public class MemberLoginProcAction implements Action {
 		String url = "main.jsp";
 
 		String userId = request.getParameter("userId");
-		String userPassword = request.getParameter("userPassword");
+		//userPassword를 암호화해서 select하기
+		String userPassword = SHA256.getEncrypt(request.getParameter("userPassword"), "cos");
 		String idSave = request.getParameter("idSave");
 
 		if (idSave != null) {

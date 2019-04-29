@@ -12,6 +12,7 @@ import com.cos.controller.Action;
 import com.cos.dao.MemberDAO;
 import com.cos.domain.Member;
 import com.cos.util.MyUtils;
+import com.cos.util.SHA256;
 
 public class MemberJoinProcAction implements Action {
 
@@ -26,6 +27,11 @@ public class MemberJoinProcAction implements Action {
 		String userEmail = request.getParameter("userEmail");
 		String userPhone = request.getParameter("userPhone");
 		String userGender = request.getParameter("userGender");
+		
+		//랜덤으로 만들어짐 -> DB에 salt값을 저장
+		//String salt = SHA.256.generateSalt();
+		String salt = "cos";
+		userPassword = SHA256.getEncrypt(userPassword, salt);
 		
 		Member member = new Member();
 		
