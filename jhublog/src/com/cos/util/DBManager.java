@@ -9,7 +9,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class DBManager {
-	
+
 	public static Connection getConnection() {
 
 		try {
@@ -44,5 +44,5 @@ public class DBManager {
 			e.printStackTrace();
 		}
 	}
-
+	
 }
