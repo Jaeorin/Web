@@ -57,8 +57,8 @@
 						href="board?cmd=boardListPage&start=${start+5}&end=${end+5}">Next</a></li>
 				</c:otherwise>
 			</c:choose>
-
 		</ul>
+		
 		<a href="board?cmd=boardWrite">글쓰기</a>
 	</div>
 	<%@ include file="/base/script.jsp"%>

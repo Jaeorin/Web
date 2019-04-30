@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<!-- 메뉴바 시작 -->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 	<!-- 배너 -->
@@ -15,11 +15,23 @@
 			<li class="nav-item">
 				<a class="nav-link" href="board?cmd=boardListPage">게시판</a>
 			</li>
+			<c:choose>
+				<c:when test="${empty sessionScope.userId}">
+					<li class="nav-item">
+						<a class="nav-link" href="member?cmd=memberLogin">로그인</a>
+					</li>
+				</c:when>
+				<c:otherwise>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><%=session.getAttribute("userId")%>님, 환영합니다!</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">로그아웃</a>
+					</li>
+				</c:otherwise>
+			</c:choose>
 			<li class="nav-item">
-				<a class="nav-link" href="#">로그인</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">회원가입</a>
+				<a class="nav-link" href="member?cmd=memberJoin">회원가입</a>
 			</li>
 		</ul>
 	</div>

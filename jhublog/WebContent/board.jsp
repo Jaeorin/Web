@@ -11,6 +11,8 @@
 </head>
 <body>
 	<%@ include file="/include/navBar.jsp"%>
+	<br />
+	
 	<div class="container">
 		<table class="table" border="1">
 			<tr>
@@ -24,7 +26,7 @@
 			<c:forEach var="item" items="${list}">
 				<tr>
 					<td>${item.num}</td>
-					<td>${item.title}</td>
+					<td><a href="board?cmd=boardView&num=${item.num}">${item.title}</a></td>
 					<td>${item.userID}</td>
 					<td>${item.readCount}</td>
 					<td>${item.createDate}</td>
@@ -32,6 +34,31 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
+		<ul class="pagination">
+			<c:choose>
+				<c:when test="${start==0}">
+					<li class="page-item disabled"><a class="page-link"
+						href="board?cmd=boardListPage&start=${start-10}&end=${end-10}">Previous</a></li>
+				</c:when>
+				<c:otherwise>
+					<li class="page-item"><a class="page-link"
+						href="board?cmd=boardListPage&start=${start-10}&end=${end-10}">Previous</a></li>
+				</c:otherwise>
+			</c:choose>
+			<c:choose>
+				<c:when test="${maxListNum<start+10}">
+					<li class="page-item disabled"><a class="page-link"
+						href="board?cmd=boardListPage&start=${start+10}&end=${end+10}">Next</a></li>
+				</c:when>
+				<c:otherwise>
+					<li class="page-item"><a class="page-link"
+						href="board?cmd=boardListPage&start=${start+10}&end=${end+10}">Next</a></li>
+				</c:otherwise>
+			</c:choose>
+			<li class="page-item active"><a class="page-link" href="board?cmd=boardWrite" >글쓰기</a></li>
+		</ul>
+		
 	</div>
 	<%@ include file="/include/script.jsp"%>
 </body>
