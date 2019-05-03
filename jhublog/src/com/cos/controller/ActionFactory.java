@@ -1,11 +1,7 @@
 package com.cos.controller;
 
 import com.cos.controller.board.*;
-import com.cos.controller.member.MemberJoinAction;
-import com.cos.controller.member.MemberJoinProcAction;
-import com.cos.controller.member.MemberLoginAction;
-import com.cos.controller.member.MemberLoginProcAction;
-import com.cos.controller.member.MemberLogoutAction;
+import com.cos.controller.member.*;
 
 public class ActionFactory {
 
@@ -13,42 +9,46 @@ public class ActionFactory {
 
 	private ActionFactory() {
 	}
-	
+
 	public static ActionFactory getInstance() {
 		return instance;
 	}
-	
+
 	public Action getAction(String cmd) {
-		if(cmd == null) {
+		if (cmd == null) {
 			return new BoardMainAction();
-		}else if (cmd.contentEquals("boardListPage")) {
+		} else if (cmd.contentEquals("boardListPage")) {
 			return new BoardListPagingAction();
-		}else if (cmd.contentEquals("boardWrite")) {
+		} else if (cmd.contentEquals("boardWrite")) {
 			return new BoardWriteAction();
-		}else if (cmd.contentEquals("boardWriteProc")) {
+		} else if (cmd.contentEquals("boardWriteProc")) {
 			return new BoardWriteProcAction();
-		}else if (cmd.contentEquals("boardView")) {
+		} else if (cmd.contentEquals("boardView")) {
 			return new BoardViewtAction();
-		}else if (cmd.contentEquals("boardUpdate")) {
+		} else if (cmd.contentEquals("boardUpdate")) {
 			return new BoardUpdateAction();
-		}else if (cmd.contentEquals("boardUpdateProc")) {
+		} else if (cmd.contentEquals("boardUpdateProc")) {
 			return new BoardUpdateProcAction();
-		}else if (cmd.contentEquals("boardDelete")) {
+		} else if (cmd.contentEquals("boardDelete")) {
 			return new BoardDeleteAction();
-		}else if (cmd.contentEquals("memberJoin")) {
+		} else if (cmd.contentEquals("memberJoin")) {
 			return new MemberJoinAction();
-		}else if (cmd.contentEquals("memberJoinProc")) {
+		} else if (cmd.contentEquals("memberJoinProc")) {
 			return new MemberJoinProcAction();
-		}else if (cmd.contentEquals("memberLogin")) {
+		} else if (cmd.contentEquals("memberLogin")) {
 			return new MemberLoginAction();
-		}else if (cmd.contentEquals("memberLoginProc")) {
+		} else if (cmd.contentEquals("memberLoginProc")) {
 			return new MemberLoginProcAction();
-		}else if (cmd.contentEquals("memberLogout")) {
+		} else if (cmd.contentEquals("memberLogout")) {
 			return new MemberLogoutAction();
+		} else if (cmd.contentEquals("memberUpdate")) {
+			return new MemberUpdateAction();
+		} else if (cmd.contentEquals("memberUpdateProc")) {
+			return new MemberUpdateProcAction();
 		}
-		
+
 		return null;
-		
+
 	}
 
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="items"></div>
+
+    <script>
+        // let apple = {
+        //     color: 'red'
+        // }
+        let result;
+        let url = "https://yts.am/api/v2/list_movies.json?sort_by=rating&page=1&rimit=20";
+        fetch(url, {
+            method: 'GET' //,
+            // headers: {
+            //     'Accept': 'application/json',
+            //     'Content-Type': 'application/json'
+            // }
+            // body: JSON.stringify(apple)
+        }).then(function(res){
+            return res.json();
+        }).then(function(data){
+            // console.log(data.data.movies[0]);    
+            result = data.data.movies;
+            for(i=0; 1<data.data.limit; i++){
+                addDiv(i);
+            }
+        });
+
+        function addDiv(i){
+            let newDiv = document.createElement('div');
+            let items = document.querySelector('.items');
+            newDiv.innerHTML = "title: : "+result[i].title+"<br /> <img src='"+result[i].medium_cover_image+"' width='300px' height='300px' />";
+            items.append(newDiv);
+        }
+    </script>
+</body>
+</html>
+
+// 식사하고 ajax로 받아와보기
+// XMLHttpRequest

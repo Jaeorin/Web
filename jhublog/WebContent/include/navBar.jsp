@@ -3,7 +3,7 @@
 	<!-- 메뉴바 시작 -->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 	<!-- 배너 -->
-	<a class="navbar-brand" href="main.jsp">Blog</a>
+	<a class="navbar-brand" href="main.jsp">jhublog</a>
 	<!-- 화면 축소 시 카테고리 모음 버튼 생성 -->
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
@@ -20,19 +20,19 @@
 					<li class="nav-item">
 						<a class="nav-link" href="member?cmd=memberLogin">로그인</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="member?cmd=memberJoin">회원가입</a>
+					</li>
 				</c:when>
 				<c:otherwise>
 					<li class="nav-item">
-						<a class="nav-link" href="#"><%=session.getAttribute("userId")%>님, 환영합니다!</a>
+						<a class="nav-link" href="member?cmd=memberUpdate"><%=session.getAttribute("userId")%> <%=session.getAttribute("admin")%>님, 환영합니다!</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">로그아웃</a>
+						<a class="nav-link" href="member?cmd=memberLogout">로그아웃</a>
 					</li>
 				</c:otherwise>
 			</c:choose>
-			<li class="nav-item">
-				<a class="nav-link" href="member?cmd=memberJoin">회원가입</a>
-			</li>
 		</ul>
 	</div>
 </nav>

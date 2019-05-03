@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +12,19 @@
 <body>
 
 	<%@ include file="/include/navBar.jsp"%>
-	
 	<br />
 	
 	<form name="loginform" action="board?cmd=memberLoginProc" method="POST">
-		<input type="text" name="userId" placeholder="로그인" required /><br />
+		<c:choose>
+			<c:when test="${empty cookie.cookieId.value}">
+				<input type="text" name="userId" placeholder="로그인" required /><br />
+			</c:when>
+			<c:otherwise>
+				<input type="text" name="userId" value="${cookie.cookieId.value}" required /><br />
+			</c:otherwise>
+		</c:choose>
 		<input type="password" name="userPassword" placeholder="비밀번호" required /><br />
 		Remember me?<input type="checkbox" name="idSave" value="on" />
-		<input type="submit" value="로그인" /><br />
 	</form>
 	<ul class="pagination">
 		<li class="page-item"><a class="page-link" href="javascript:loginform.submit();">완료</a></li>

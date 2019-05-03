@@ -40,7 +40,36 @@
 		</table>
 		<ul class="pagination">
 			<li class="page-item"><a class="page-link" href="board?cmd=boardUpdate&num=${board.num}" >수정</a></li>
-			<li class="page-item"><a class="page-link" href="board?cmd=boardDelete&num=${board.num}" >삭제</a></li>
+			<c:choose>
+				<c:when test="${empty sessionScope.userId}">
+					<li class="page-item disabled">
+						<a class="page-link" href="#">삭제</a>
+					</li>
+				</c:when>
+				<c:otherwise>
+					<c:choose>
+						<c:when test="${sessionScope.admin eq '관리자'}">
+							<li class="page-item">
+								<a class="page-link" href="board?cmd=boardDelete&num=${board.num}">삭제</a>
+							</li>
+						</c:when>
+						<c:when test="${sessionScope.admin eq '회원'}">
+							<c:choose>
+								<c:when test="${board.userID == sessionScope.userId}">
+									<li class="page-item">
+										<a class="page-link" href="board?cmd=boardDelete&num=${board.num}">삭제</a>
+									</li>
+								</c:when>
+								<c:otherwise>
+									<li class="page-item disabled">
+										<a class="page-link" href="#">삭제</a>
+									</li>
+								</c:otherwise>
+							</c:choose>
+						</c:when>
+					</c:choose>
+				</c:otherwise>
+			</c:choose>
 			<li class="page-item"><a class="page-link" href="board?cmd=boardListPage" >목록</a></li>
 		</ul>
 	</div>

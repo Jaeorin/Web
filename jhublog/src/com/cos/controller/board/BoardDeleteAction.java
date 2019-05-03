@@ -1,6 +1,7 @@
 package com.cos.controller.board;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cos.controller.Action;
 import com.cos.dao.BoardDAO;
+import com.cos.domain.Board;
+import com.cos.util.Code;
 import com.cos.util.MyUtils;
 
 public class BoardDeleteAction implements Action {
@@ -23,6 +26,17 @@ public class BoardDeleteAction implements Action {
 
 		if (result == 1) {
 			String url = "board.jsp";
+			
+			int start = 0;
+			int end = 10;
+			
+			List<Board> list = boardDAO.findall(start, end);
+			
+			request.setAttribute("list", list);
+			
+			request.setAttribute("start", start);
+			request.setAttribute("end", end);
+			request.setAttribute("maxListNum", Code.getMaxListNum());
 
 			RequestDispatcher dis = request.getRequestDispatcher(url);
 			dis.forward(request, response);

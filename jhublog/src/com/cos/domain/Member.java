@@ -14,6 +14,7 @@ public class Member {
 	private LocalDate createDate;
 	private LocalDate updateDate;
 	private int admin;
+	private String userAddr;
 
 	public Member() {
 	}
@@ -98,11 +99,20 @@ public class Member {
 		this.admin = admin;
 	}
 
+	public String getUserAddr() {
+		return userAddr;
+	}
+
+	public void setUserAddr(String userAddr) {
+		this.userAddr = userAddr;
+	}
+
 	@Override
 	public String toString() {
 		return "Member [num=" + num + ", userId=" + userId + ", userPassword=" + userPassword + ", userEmail="
 				+ userEmail + ", userPhone=" + userPhone + ", userGender=" + userGender + ", userState=" + userState
-				+ ", createDate=" + createDate + ", updateDate=" + updateDate + "]";
+				+ ", createDate=" + createDate + ", updateDate=" + updateDate + ", admin=" + admin + ", userAddr="
+				+ userAddr + "]";
 	}
 
 }

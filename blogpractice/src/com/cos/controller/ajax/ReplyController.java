@@ -1,5 +1,6 @@
 package com.cos.controller.ajax;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -9,25 +10,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/rest")
-public class RestController extends HttpServlet {
+import com.cos.domain.Reply;
+import com.google.gson.Gson;
+
+@WebServlet("/reply")
+public class ReplyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public RestController() {
+	public ReplyController() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String userId = request.getParameter("userId");
+
+		request.setCharacterEncoding("UTF-8");
+		BufferedReader br = request.getReader();
+
+		// System.out.println(br.readLine());
+		Gson gson = new Gson();
+		Reply reply = gson.fromJson(br.readLine(), Reply.class);
+
 		RestUtil r = new RestUtil();
-		
-		String result = r.duplicateId(userId);
-		
+		int result = r.save(reply);
+
 		PrintWriter out = response.getWriter();
-		out.print(result); // println을 쓰면 ln 때문에 뒤에 \n이 붙어 같은 값이 아니게 된다(오류발생)
-		
+
+		if (result == 1) {
+			out.print("OK");
+		} else {
+			out.print("ERROR");
+		}
+
+		// 성공 시 DB에 Insert하고 out.print("OK");
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

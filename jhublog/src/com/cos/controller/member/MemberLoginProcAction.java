@@ -22,6 +22,7 @@ public class MemberLoginProcAction implements Action {
 		String url = "main.jsp";
 
 		String userId = request.getParameter("userId");
+		
 		//userPassword를 암호화해서 select하기
 		String userPassword = SHA256.getEncrypt(request.getParameter("userPassword"), "cos");
 		String idSave = request.getParameter("idSave");
@@ -41,14 +42,26 @@ public class MemberLoginProcAction implements Action {
 		MemberDAO memberDAO = MemberDAO.getInstance();
 
 		int result = memberDAO.findByUserIdAndUserPassword(userId, userPassword);
+		int adminCheck = memberDAO.adminCheck(userId);
 
-		if (result == 1) {
+		if (result == 1 && adminCheck == 0) {
 			// 로그인 완료(세션)
 			HttpSession session = request.getSession();
 			session.setAttribute("userId", userId);
+			session.setAttribute("admin", "관리자");
+			
 			// main.jsp로 이동
 			RequestDispatcher dis = request.getRequestDispatcher(url);
 			dis.forward(request, response);
+			
+		} else if (result == 1 && adminCheck == 1) {
+			HttpSession session = request.getSession();
+			session.setAttribute("userId", userId);
+			session.setAttribute("admin", "회원");
+			
+			RequestDispatcher dis = request.getRequestDispatcher(url);
+			dis.forward(request, response);
+			
 		} else if (result == 0) {
 			// 로그인 실패
 			MyUtils.script("아이디 혹은 비밀번호가 일치하지 않습니다.", response);

@@ -19,7 +19,6 @@
 							<a class="nav-link" href="member?cmd=memberLogin">로그인</a>
 						</c:when>
 						<c:otherwise>
-							<%=session.getAttribute("userId")%>
 							<a class="nav-link" href="member?cmd=memberLogout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>

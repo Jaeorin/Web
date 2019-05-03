@@ -20,7 +20,7 @@
 	<form name="writeform" action="board?cmd=boardWriteProc" method="POST">
 		제목 : <input type="text" name="title" /><br />
 		<textarea id="summernote" name="editordata"></textarea>
-		<input type="hidden" name="userID" value="cos" /><br />
+		<input type="hidden" name="userID" value="${sessionScope.userId}" /><br />
 	</form>
 	
 	<ul class="pagination">
